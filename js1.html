@@ -1,31 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Sample JavaScript IO Page</title>  
-
-
-<script>
-function add() {
-let a =document.getElementById("fn").value;
-let b =document.getElementById("sn").value;
-let c = Number(a) + Number(b);
-document.getElementById("ans").innerHTML=c;}
-
-  
-<script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h3>This is a sample JavaScript and HTML document.</h3>
 
-  <p>First number? <input id="fn"> <br>
-  Second number? <input id="sn"> <br>
-  <button onclick="add()"> Add the Numbers </button>
+    <div class="calculator">
+        <!-- Display Screen -->
+        <input type="text" id="display" readonly placeholder="0">
+        
+        <!-- Buttons Grid -->
+        <div class="buttons">
+            <button class="btn clear" onclick="clearDisplay()">C</button>
+            <button class="btn operator" onclick="appendOperator('/')">/</button>
+            <button class="btn operator" onclick="appendOperator('*')">*</button>
+            <button class="btn operator" onclick="appendOperator('-')">-</button>
+            
+            <button class="btn" onclick="appendNumber('7')">7</button>
+            <button class="btn" onclick="appendNumber('8')">8</button>
+            <button class="btn" onclick="appendNumber('9')">9</button>
+            <button class="btn operator" onclick="appendOperator('+')">+</button>
+            
+            <button class="btn" onclick="appendNumber('4')">4</button>
+            <button class="btn" onclick="appendNumber('5')">5</button>
+            <button class="btn" onclick="appendNumber('6')">6</button>
+            <button class="btn equals" onclick="calculate()">=</button>
+            
+            <button class="btn" onclick="appendNumber('1')">1</button>
+            <button class="btn" onclick="appendNumber('2')">2</button>
+            <button class="btn" onclick="appendNumber('3')">3</button>
+            <button class="btn" onclick="appendNumber('0')">0</button>
+            
+            <button class="btn" onclick="appendNumber('.')">.</button>
+        </div>
+    </div>
 
-</p>
-<p>
-    Your Answer is <span id="ans"> _______________ </span></p>
-
-
+    <script src="script.js"></script>
 </body>
 </html>
